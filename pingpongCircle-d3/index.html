@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>NR learns D3</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+
+  <script src="js/circle.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+<body>
+
+  <div class="row">
+    <div class="col-12-lg" style="margin: 100px 100px" id="area1">
+
+    </div>
+    <script type="text/javascript">
+      var w = 400;
+          h = 400;
+
+      var svgContainer = d3.select("#area1")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h)
+                  .style("background-color", "#b5b5e1")
+
+      var c = addCircle(svgContainer, 100, 100, 10);
+      var direction = upRight;
+
+////////////// Method A
+      // moveCircle1();
+      // function moveCircle1()  {
+      //   transition = moveCircle(c, direction);
+      //   transition.on("end", function(){
+      //     direction = switchDirection(c, direction);
+      //
+      //     console.log(direction)
+      //    moveCircle1()
+      //   })
+      // }
+      // moveCircleA(c, direction);
+
+////////////// Method B
+      var speed = 15;
+      moveCircleB(c, direction);
+      direction = switchDirection(c, direction)
+
+      </script>
+  </div>
+</body>
+</html>
